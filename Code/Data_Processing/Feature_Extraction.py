@@ -16,7 +16,6 @@ import pandas as pd
 import numpy as np
 
 nlp = spacy.load('en_core_web_sm')
-df = pd.read_csv("amazon_reviews_training.csv")
 
 # 1. FRE READABILITY SCORE
 def add_readability_score(df):
@@ -24,9 +23,6 @@ def add_readability_score(df):
         lambda d: flesch_reading_ease(d))
 
 # 2. SENTIMENT CATEGORY & RATING CATEGORY
-sentiment_threshold = 0.2
-rating_threshold = 2.5
-
 
 def add_sentiment_category(df, threshold):
 
@@ -134,4 +130,33 @@ def add_max_similarity(df):
 
     df['MAX_SIMILARITY'] = max_similarities
 
+# AVERAGE WORD LENGTH
 
+def add_avg_word_length(df):
+    def calculate_average_word_length(text):
+        words = text.split()
+        total_word_length = sum(len(word) for word in words)
+        average_word_length = total_word_length / \
+            len(words) if len(words) > 0 else 0
+        return average_word_length 
+    
+    df['AVG_WORD_LENGTH'] = df['REVIEW_TEXT'].apply(calculate_average_word_length)
+
+
+# COMBINE INTO ONE EXCEPT MAX SIMILARITY (TIME)
+def preprocess_features(df):
+    add_readability_score(df)
+    add_vader_sentiment_score(df)
+    add_sentiment_category(df, threshold=0.0)
+    add_rating_category(df, threshold=3.0)
+    add_coherence_column(df)
+    add_title_length(df)
+    add_pos_tags(df)
+    add_average_rating(df)
+    add_rating_deviation(df)
+    add_total_reviews(df)
+    add_named_entities(df)
+    add_review_length(df)
+    add_avg_word_length(df)
+    
+###ADD THE FEATURES TO A FRESH DATASET

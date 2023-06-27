@@ -1,7 +1,7 @@
 # Identification-of-fake-reviews
 
 # Project Summary
-This project aims to implement machine learning to suitable identify fake reviews on Amazon. We use the following approach for the project
+This project aims to implement machine learning to suitable identify fake reviews. We use the following approach for the project
 
 1. __Feature Extraction__: From the initial features of the dataset used: RATING, VERIFIED_PURCHASE, PRODUCT_ID, PRODUCT_CATEGORY, REVIEW_TEXT, REVIEW_TITLE, we have extracted the following features to use for training various machine learning models:
    

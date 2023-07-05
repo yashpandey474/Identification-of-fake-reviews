@@ -54,4 +54,8 @@ This project aims to implement machine learning to suitable identify fake review
        B. Classification_report
        C. Precision_score
 
+## CREDITS
+For GloVe pre-trained model used: Jeffrey Pennington, Richard Socher, and Christopher D. Manning. 2014. GloVe: Global Vectors for Word Representation. [pdf] [bib]
+
+
      

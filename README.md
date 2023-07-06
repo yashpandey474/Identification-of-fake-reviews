@@ -1,4 +1,21 @@
 # Identification-of-fake-reviews
+# Datasets Used
+1. Amazon Reviews Labelled
+2. Amazon Reviews Unlabelled
+3. Yelp Reviews Labelled
+
+# Learning Methods Used
+1. Supervised Learning Models (LogReg, SVM, RandomForest, etc.)
+2. Unsupervised Learning Models (K-means clustering etc.)
+3. Deep Learning Models (SOM, CNN, ANN etc.)
+4. Anomaly Detection Models (Isolation Forest, One-Class SVM)
+
+# Processing Methods Used
+1. Word2Vec
+2.  TFIDF
+3. GloVe
+4. FastText
+5. BERT
 
 # Project Summary
 This project aims to implement machine learning to suitable identify fake reviews. We use the following approach for the project
